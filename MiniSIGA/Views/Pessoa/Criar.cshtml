@@ -1,0 +1,175 @@
+﻿@model MiniSIGA.Models.Pessoa
+
+@{
+    ViewBag.Title = "Criar";
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+}
+
+@using (Html.BeginForm("Criar","Pessoa",FormMethod.Post,htmlAttributes: new { @id="formulario"}))
+{
+    @Html.AntiForgeryToken()
+
+    @*<div class="form-horizontal">
+        <h4>Pessoa</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+                        @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>*@
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card ">
+                        <div class="card-header card-header-primary card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">person_add</i>
+                            </div>
+                            <h4 class="card-title">Pessoa</h4>
+                        </div>
+                        <div class="card-body ">
+                            <form method="#" action="#">
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "bmd-label-floating", @for = "Nome" })
+                                            @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="label-checkbox">Sexo</label>
+                                        <div class="form-check">
+                                            <label class="form-check-label mr-3">
+                                                <input class="form-check-input" type="radio" name="Sexo" value="option2" checked> Masculino
+                                                <span class="circle">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="radio" name="Sexo" value="option1"> Feminino
+                                                <span class="circle">
+                                                    <span class="check"></span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "bmd-label-floating", @for = "Email" })
+                                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <span class="bmd-label">Data Nascimento</span>
+                                            <input type="date" name="DataNasc" class="form-control pt-4" />
+                                            @Html.ValidationMessageFor(model => model.DataNasc, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Telefone1, htmlAttributes: new { @class = "bmd-label-floating", @for = "Telefone1" })
+                                            @Html.EditorFor(model => model.Telefone1, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Telefone1, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Telefone2, htmlAttributes: new { @class = "bmd-label-floating", @for = "Telefone2" })
+                                            @Html.EditorFor(model => model.Telefone2, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Telefone2, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AcessoId, htmlAttributes: new { @class = "bmd-label-floating", @for = "AcessoId" })
+                                            @Html.EditorFor(model => model.AcessoId, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AcessoId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "bmd-label-floating", @for = "Senha" })
+                                            <input type="password" id="Senha" name="Senha" class="form-control" onchange="valid()" />
+                                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Repita a Senha</label>
+                                            <input type="password" id="Confirm" name="Confirm" class="form-control" onchange="valid()" />
+                                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                @*<div class="form-group">
+                                        @Html.LabelFor(model => model.PessoaAcessoId, htmlAttributes: new { @class = "bmd-label-floating", @for = "PessoaAcessoId" })
+                                        @Html.EditorFor(model => model.PessoaAcessoId, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PessoaAcessoId, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.DataCadastro, htmlAttributes: new { @class = "bmd-label-floating", @for = "DataCadastro" })
+                                        @Html.EditorFor(model => model.DataCadastro, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.DataCadastro, "", new { @class = "text-danger" })
+                                    </div>*@
+
+                                @*<div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value=""> Subscribe to newsletter
+                                            <span class="form-check-sign">
+                                                <span class="check"></span>
+                                            </span>
+                                        </label>
+                                    </div>*@
+                            </form>
+                        </div>
+                        <div class="card-footer ">
+                            <button type="submit" disabled="disabled" class="btn btn-fill btn-primary" id="btn" onsubmit="validar()">Salvar</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    function valid() {
+        var senha1 = $('#Senha').val();
+        var senha2 = $('#Confirm').val();
+
+        if (senha1 != senha2 || senha1 == "" || senha2 == "") {
+            $("#btn").attr("disabled")
+        }
+        else {
+            $("#btn").removeAttr("disabled")
+        }
+    }
+</script>

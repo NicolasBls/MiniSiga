@@ -1,0 +1,76 @@
+﻿@model MiniSIGA.Models.Documento
+
+@{
+    ViewBag.Title = "Documento";
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+}
+
+<h2>Documento</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card ">
+                        <div class="card-header card-header-primary card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">person_add</i>
+                            </div>
+                            <h4 class="card-title">Pessoa</h4>
+                        </div>
+                        <div class="card-body ">
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="bmd-label-floating">RG</span>
+                                        @Html.Editor("numeroRg", new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <span class="bmd-label">Data de Expedição</span>
+                                        <input type="date" name="DataExpedicao" class="form-control pt-4" />
+                                        @Html.ValidationMessageFor(model => model.DataExpedicao, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <span class="bmd-label-floating">Orgão Expedidor</span>
+                                        @Html.EditorFor(model => model.OrgaoExpedidor, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.OrgaoExpedidor, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="bmd-label-floating">CPD</span>
+                                        @Html.Editor("numeroCpf", new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-footer ">
+                            <button type="submit" class="btn btn-fill btn-primary" id="btn" onsubmit="validar()">Salvar</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}

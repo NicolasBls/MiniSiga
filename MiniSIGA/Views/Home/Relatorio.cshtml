@@ -1,0 +1,160 @@
+﻿@{
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card card-chart">
+            <div class="card-header card-header-success">
+                <div class="ct-chart" id="dailySalesChart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"><line x1="40" x2="40" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="72.61830357142857" x2="72.61830357142857" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="105.23660714285714" x2="105.23660714285714" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="137.85491071428572" x2="137.85491071428572" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="170.47321428571428" x2="170.47321428571428" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="203.09151785714283" x2="203.09151785714283" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="235.70982142857142" x2="235.70982142857142" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line y1="120" y2="120" x1="40" x2="268.328125" class="ct-grid ct-vertical"></line><line y1="96" y2="96" x1="40" x2="268.328125" class="ct-grid ct-vertical"></line><line y1="72" y2="72" x1="40" x2="268.328125" class="ct-grid ct-vertical"></line><line y1="48" y2="48" x1="40" x2="268.328125" class="ct-grid ct-vertical"></line><line y1="24" y2="24" x1="40" x2="268.328125" class="ct-grid ct-vertical"></line><line y1="0" y2="0" x1="40" x2="268.328125" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M 40 91.2 C 72.618 79.2 72.618 79.2 72.618 79.2 C 105.237 103.2 105.237 103.2 105.237 103.2 C 137.855 79.2 137.855 79.2 137.855 79.2 C 170.473 64.8 170.473 64.8 170.473 64.8 C 203.092 76.8 203.092 76.8 203.092 76.8 C 235.71 28.8 235.71 28.8 235.71 28.8" class="ct-line"></path><line x1="40" y1="91.2" x2="40.01" y2="91.2" class="ct-point" ct:value="12" opacity="1"></line><line x1="72.61830357142857" y1="79.2" x2="72.62830357142857" y2="79.2" class="ct-point" ct:value="17" opacity="1"></line><line x1="105.23660714285714" y1="103.2" x2="105.24660714285714" y2="103.2" class="ct-point" ct:value="7" opacity="1"></line><line x1="137.85491071428572" y1="79.2" x2="137.8649107142857" y2="79.2" class="ct-point" ct:value="17" opacity="1"></line><line x1="170.47321428571428" y1="64.8" x2="170.48321428571427" y2="64.8" class="ct-point" ct:value="23" opacity="1"></line><line x1="203.09151785714283" y1="76.8" x2="203.10151785714282" y2="76.8" class="ct-point" ct:value="18" opacity="1"></line><line x1="235.70982142857142" y1="28.799999999999997" x2="235.7198214285714" y2="28.799999999999997" class="ct-point" ct:value="38" opacity="1"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="125" width="32.61830357142857" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="72.61830357142857" y="125" width="32.61830357142857" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">T</span></foreignObject><foreignObject style="overflow: visible;" x="105.23660714285714" y="125" width="32.61830357142857" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">W</span></foreignObject><foreignObject style="overflow: visible;" x="137.85491071428572" y="125" width="32.61830357142857" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">T</span></foreignObject><foreignObject style="overflow: visible;" x="170.47321428571428" y="125" width="32.618303571428555" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">F</span></foreignObject><foreignObject style="overflow: visible;" x="203.09151785714283" y="125" width="32.618303571428584" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">S</span></foreignObject><foreignObject style="overflow: visible;" x="235.70982142857142" y="125" width="32.618303571428584" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">S</span></foreignObject><foreignObject style="overflow: visible;" y="96" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="72" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">10</span></foreignObject><foreignObject style="overflow: visible;" y="48" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">20</span></foreignObject><foreignObject style="overflow: visible;" y="24" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">30</span></foreignObject><foreignObject style="overflow: visible;" y="0" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">40</span></foreignObject><foreignObject style="overflow: visible;" y="-30" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">50</span></foreignObject></g></svg></div>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Daily Sales</h4>
+                <p class="card-category">
+                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.
+                </p>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons">access_time</i> atualizado à 4 minutes ago
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-chart">
+            <div class="card-header card-header-warning">
+
+                <div class="ct-chart" id="websiteViewsChart">
+                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-bar" style="width: 100%; height: 100%;">
+                        <g class="ct-grids">
+                            <line y1="120" y2="120" x1="40" x2="263.328125" class="ct-grid ct-vertical">
+                            </line>
+                            <line y1="96" y2="96" x1="40" x2="263.328125" class="ct-grid ct-vertical">
+                            </line>
+                            <line y1="72" y2="72" x1="40" x2="263.328125" class="ct-grid ct-vertical">
+                            </line>
+                            <line y1="48" y2="48" x1="40" x2="263.328125" class="ct-grid ct-vertical">
+                            </line>
+                            <line y1="24" y2="24" x1="40" x2="263.328125" class="ct-grid ct-vertical">
+                            </line>
+                            <line y1="0" y2="0" x1="40" x2="263.328125" class="ct-grid ct-vertical">
+                            </line>
+                        </g>
+                        <g>
+                            <g class="ct-series ct-series-a">
+                                <line x1="49.305338541666664" x2="49.305338541666664" y1="120" y2="54.959999999999994" class="ct-bar" ct:value="542" opacity="1">
+                                </line>
+                                <line x1="67.916015625" x2="67.916015625" y1="120" y2="66.84" class="ct-bar" ct:value="443" opacity="1">
+                                </line>
+                                <line x1="86.52669270833333" x2="86.52669270833333" y1="120" y2="81.6" class="ct-bar" ct:value="320" opacity="1">
+
+                                </line>
+                                <line x1="105.13736979166667" x2="105.13736979166667" y1="120" y2="26.400000000000006" class="ct-bar" ct:value="780" opacity="1">
+
+                                </line>
+                                <line x1="123.748046875" x2="123.748046875" y1="120" y2="53.64" class="ct-bar" ct:value="553" opacity="1">
+
+                                </line>
+                                <line x1="142.35872395833331" x2="142.35872395833331" y1="120" y2="65.64" class="ct-bar" ct:value="453" opacity="1">
+
+                                </line>
+                                <line x1="160.96940104166666" x2="160.96940104166666" y1="120" y2="80.88" class="ct-bar" ct:value="326" opacity="1">
+
+                                </line>
+                                <line x1="179.58007812499997" x2="179.58007812499997" y1="120" y2="67.92" class="ct-bar" ct:value="434" opacity="1">
+
+                                </line>
+                                <line x1="198.19075520833331" x2="198.19075520833331" y1="120" y2="51.84" class="ct-bar" ct:value="568" opacity="1">
+
+                                </line>
+                                <line x1="216.80143229166666" x2="216.80143229166666" y1="120" y2="46.8" class="ct-bar" ct:value="610" opacity="1">
+
+                                </line>
+                                <line x1="235.41210937499997" x2="235.41210937499997" y1="120" y2="29.28" class="ct-bar" ct:value="756" opacity="1">
+
+                                </line>
+                                <line x1="254.02278645833331" x2="254.02278645833331" y1="120" y2="12.599999999999994" class="ct-bar" ct:value="895" opacity="1"></line>
+                            </g>
+                        </g>
+                        <g class="ct-labels">
+                            <foreignObject style="overflow: visible;" x="40" y="125" width="18.610677083333332" height="20">
+                                <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">J</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" x="58.61067708333333" y="125" width="18.610677083333332" height="20">
+                                <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">F</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" x="77.22135416666666" y="125" width="18.610677083333336" height="20">
+                                <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">M</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" x="95.83203125" y="125" width="18.61067708333333" height="20">
+                                <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">A</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" x="114.44270833333333" y="125" width="18.61067708333333" height="20">
+                                <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">M</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" x="133.05338541666666" y="125" width="18.610677083333343" height="20">
+                                <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">J</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" x="151.6640625" y="125" width="18.610677083333314" height="20">
+                                <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">J</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" x="170.27473958333331" y="125" width="18.610677083333343" height="20">
+                                <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">A</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" x="188.88541666666666" y="125" width="18.610677083333343" height="20">
+                                <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">S</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" x="207.49609375" y="125" width="18.610677083333314" height="20">
+                                <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">O</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" x="226.10677083333331" y="125" width="18.610677083333343" height="20">
+                                <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">N</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" x="244.71744791666666" y="125" width="30" height="20">
+                                <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">D</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" y="96" x="0" height="24" width="30">
+                                <span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">0</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" y="72" x="0" height="24" width="30">
+                                <span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">200</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" y="48" x="0" height="24" width="30">
+                                <span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">400</span>
+                            </foreignObject>
+                            <foreignObject style="overflow: visible;" y="24" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">600</span></foreignObject>
+                            <foreignObject style="overflow: visible;" y="0" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">800</span></foreignObject>
+                            <foreignObject style="overflow: visible;" y="-30" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">1000</span></foreignObject>
+                        </g>
+                    </svg>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Email Subscriptions</h4>
+                <p class="card-category">Last Campaign Performance</p>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons">access_time</i> campaign sent 2 days ago
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-chart">
+            <div class="card-header card-header-danger">
+                <div class="ct-chart" id="completedTasksChart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"><line x1="40" x2="40" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="68.541015625" x2="68.541015625" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="97.08203125" x2="97.08203125" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="125.623046875" x2="125.623046875" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="154.1640625" x2="154.1640625" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="182.705078125" x2="182.705078125" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="211.24609375" x2="211.24609375" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="239.787109375" x2="239.787109375" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line y1="120" y2="120" x1="40" x2="268.328125" class="ct-grid ct-vertical"></line><line y1="96" y2="96" x1="40" x2="268.328125" class="ct-grid ct-vertical"></line><line y1="72" y2="72" x1="40" x2="268.328125" class="ct-grid ct-vertical"></line><line y1="48" y2="48" x1="40" x2="268.328125" class="ct-grid ct-vertical"></line><line y1="24" y2="24" x1="40" x2="268.328125" class="ct-grid ct-vertical"></line><line y1="0" y2="0" x1="40" x2="268.328125" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M 40 92.4 C 68.541 30 68.541 30 68.541 30 C 97.082 66 97.082 66 97.082 66 C 125.623 84 125.623 84 125.623 84 C 154.164 86.4 154.164 86.4 154.164 86.4 C 182.705 91.2 182.705 91.2 182.705 91.2 C 211.246 96 211.246 96 211.246 96 C 239.787 97.2 239.787 97.2 239.787 97.2" class="ct-line"></path><line x1="40" y1="92.4" x2="40.01" y2="92.4" class="ct-point" ct:value="230" opacity="1"></line><line x1="68.541015625" y1="30" x2="68.551015625" y2="30" class="ct-point" ct:value="750" opacity="1"></line><line x1="97.08203125" y1="66" x2="97.09203125" y2="66" class="ct-point" ct:value="450" opacity="1"></line><line x1="125.623046875" y1="84" x2="125.633046875" y2="84" class="ct-point" ct:value="300" opacity="1"></line><line x1="154.1640625" y1="86.4" x2="154.1740625" y2="86.4" class="ct-point" ct:value="280" opacity="1"></line><line x1="182.705078125" y1="91.2" x2="182.715078125" y2="91.2" class="ct-point" ct:value="240" opacity="1"></line><line x1="211.24609375" y1="96" x2="211.25609375" y2="96" class="ct-point" ct:value="200" opacity="1"></line><line x1="239.787109375" y1="97.2" x2="239.797109375" y2="97.2" class="ct-point" ct:value="190" opacity="1"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="125" width="28.541015625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">12p</span></foreignObject><foreignObject style="overflow: visible;" x="68.541015625" y="125" width="28.541015625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">3p</span></foreignObject><foreignObject style="overflow: visible;" x="97.08203125" y="125" width="28.541015625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">6p</span></foreignObject><foreignObject style="overflow: visible;" x="125.623046875" y="125" width="28.541015625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">9p</span></foreignObject><foreignObject style="overflow: visible;" x="154.1640625" y="125" width="28.541015625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">12p</span></foreignObject><foreignObject style="overflow: visible;" x="182.705078125" y="125" width="28.541015625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">3a</span></foreignObject><foreignObject style="overflow: visible;" x="211.24609375" y="125" width="28.541015625" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">6a</span></foreignObject><foreignObject style="overflow: visible;" x="239.787109375" y="125" width="30" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">9a</span></foreignObject><foreignObject style="overflow: visible;" y="96" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="72" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">200</span></foreignObject><foreignObject style="overflow: visible;" y="48" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">400</span></foreignObject><foreignObject style="overflow: visible;" y="24" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">600</span></foreignObject><foreignObject style="overflow: visible;" y="0" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">800</span></foreignObject><foreignObject style="overflow: visible;" y="-30" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">1000</span></foreignObject></g></svg></div>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Completed Tasks</h4>
+                <p class="card-category">Last Campaign Performance</p>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons">access_time</i> campaign sent 2 days ago
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

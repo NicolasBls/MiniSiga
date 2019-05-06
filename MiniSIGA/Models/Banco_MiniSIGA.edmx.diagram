@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8e6d13cc5e424aba9a1bd10e6b4c9b9d" Name="Diagram1" ZoomLevel="98">
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Acesso" Width="1.5" PointX="0.75" PointY="9.5" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Aula" Width="1.5" PointX="8.25" PointY="15.125" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Avaliacao" Width="1.5" PointX="5.25" PointY="11.125" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Cidade" Width="1.5" PointX="0.75" PointY="19.375" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Curso" Width="1.5" PointX="8.25" PointY="11.125" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Disciplina" Width="1.5" PointX="6" PointY="15" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.DisciplinaCurso" Width="1.5" PointX="10.5" PointY="13" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Documento" Width="1.5" PointX="5.25" PointY="7.125" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.DocumentoTipo" Width="1.5" PointX="3" PointY="4.625" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Endereco" Width="1.5" PointX="3" PointY="14.625" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Estado" Width="1.5" PointX="1.5" PointY="22.25" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Falta" Width="1.5" PointX="13.5" PointY="11.625" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Grau" Width="1.5" PointX="6" PointY="18.75" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.NotaAluno" Width="1.5" PointX="7.5" PointY="7.625" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Pais" Width="1.5" PointX="1.5" PointY="25.5" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Pessoa" Width="1.5" PointX="3" PointY="7.375" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.PessoaDisciplina" Width="1.5" PointX="11.25" PointY="9.125" />
+        <EntityTypeShape EntityType="DB_A469CC_MiniSigaModel.Status" Width="1.5" PointX="0.75" PointY="14.875" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Pessoa_Acesso" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Aula_Disciplina1" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Aula_Pessoa" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Falta_Aula" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Avaliacao_Pessoa" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Avaliacao_Status" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_NotaAluno_Avaliacao" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Cidade_Estado" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Endereco_Cidade" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Curso_Grau1" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Curso_Pessoa" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Curso_Status" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_DisciplinaCurso_Curso" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_AlunoDisciplina_Disciplina1" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Disciplina_Pessoa" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Disciplina_Status" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_DisciplinaCurso_Disciplina" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Documento_DocumentoTipo" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Documento_Pessoa" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Documento_Status" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Endereco_Pessoa" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Endereco_Status" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Estado_Pais" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Falta_Pessoa" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_NotaAluno_Pessoa" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Pessoa_Pessoa" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_Pessoa_Status" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_PessoaDisciplina_Pessoa" />
+        <AssociationConnector Association="DB_A469CC_MiniSigaModel.FK_AlunoDisciplina_Status" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

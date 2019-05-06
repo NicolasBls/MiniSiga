@@ -1,0 +1,124 @@
+﻿@model IEnumerable<MiniSIGA.Models.Pessoa>
+
+@{
+    ViewBag.Title = "Listar";
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Nova Pessoa", "Criar")
+</p>
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">assignment</i>
+                        </div>
+                        <h4 class="card-title">Listar Pesssoas</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="toolbar">
+                            <!--        Here you can write extra buttons/actions for the toolbar-->
+                        </div>
+                        <div class="material-datatables">
+                            <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th class="sorting" tabindex="0" aria-controls="datatables" rowspan="1" colspan="1" style="width: 178px;" aria-label="Name: activate to sort column ascending">
+                                            Nome
+                                        </th>
+                                        <th>
+                                            Data Nascimento
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Sexo)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Email)
+                                        </th>
+                                        <th>
+                                            Telefone 1
+                                        </th>
+                                        <th>
+                                            Telefone 2
+                                        </th>
+                                        <th>
+                                            Acesso
+                                        </th>
+                                        @*<th>
+                                            @Html.DisplayNameFor(model => model.Pessoa2.Nome)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.DataCadastro)
+                                        </th>*@
+                                        <th class="disabled-sorting text-right">
+                                            Actions
+                                        </th>
+                                    </tr>
+                                </thead>
+                                @*<tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                                    </tfoot>*@
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Nome)
+                                            </td>
+                                            <td>
+                                                @item.DataNasc.ToString("dd/MM/yyyy")
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Sexo)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Email)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Telefone1)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Telefone2)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Acesso.Descricao)
+                                            </td>
+                                            @*<td>
+                                                @Html.DisplayFor(modelItem => item.PessoaAcessoId)
+                                            </td>
+                                            <td>
+                                                @item.DataCadastro.ToString("dd/MM/yyyy")
+                                            </td>*@
+                                            <td class="text-right">
+                                                <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
+                                                <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
+                                                <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- end content-->
+                </div>
+                <!--  end card  -->
+            </div>
+            <!-- end col-md-12 -->
+        </div>
+        <!-- end row -->
+    </div>
+</div>
+

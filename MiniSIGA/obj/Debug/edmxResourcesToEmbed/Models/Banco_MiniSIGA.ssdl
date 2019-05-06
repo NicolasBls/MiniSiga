@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A469CC_MiniSigaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Acesso">
+    <Key>
+      <PropertyRef Name="AcessoId" />
+    </Key>
+    <Property Name="AcessoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="nchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Aula">
+    <Key>
+      <PropertyRef Name="AulaId" />
+    </Key>
+    <Property Name="AulaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PessoaId" Type="int" Nullable="false" />
+    <Property Name="Data" Type="date" Nullable="false" />
+    <Property Name="Conteudo" Type="text" />
+    <Property Name="DisciplinaId" Type="int" Nullable="false" />
+    <Property Name="Observacao" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Avaliacao">
+    <Key>
+      <PropertyRef Name="AvaliacaoId" />
+    </Key>
+    <Property Name="AvaliacaoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PessoaId" Type="int" Nullable="false" />
+    <Property Name="DataAvaliacaoId" Type="int" Nullable="false" />
+    <Property Name="Observacao" Type="text" />
+    <Property Name="NotaMaxima" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cidade">
+    <Key>
+      <PropertyRef Name="CidadeId" />
+    </Key>
+    <Property Name="CidadeId" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EstadoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Curso">
+    <Key>
+      <PropertyRef Name="CursoId" />
+    </Key>
+    <Property Name="CursoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="GrauId" Type="int" Nullable="false" />
+    <Property Name="Duracao" Type="int" Nullable="false" />
+    <Property Name="PessoaId" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="Disciplina">
+    <Key>
+      <PropertyRef Name="DisciplinaId" />
+    </Key>
+    <Property Name="DisciplinaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PessoaId" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="DisciplinaCurso">
+    <Key>
+      <PropertyRef Name="DisciplinaId" />
+      <PropertyRef Name="CursoId" />
+    </Key>
+    <Property Name="DisciplinaId" Type="int" Nullable="false" />
+    <Property Name="CursoId" Type="int" Nullable="false" />
+    <Property Name="Data" Type="date" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="Periodo" Type="int" />
+    <Property Name="Valor" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="Turno" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Documento">
+    <Key>
+      <PropertyRef Name="DocumentoId" />
+    </Key>
+    <Property Name="DocumentoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PessoaId" Type="int" Nullable="false" />
+    <Property Name="DocumentoTipoId" Type="int" Nullable="false" />
+    <Property Name="Numero" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="OrgaoExpedidor" Type="varchar" MaxLength="10" />
+    <Property Name="DataExpedicao" Type="date" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentoTipo">
+    <Key>
+      <PropertyRef Name="DocumentoTipoId" />
+    </Key>
+    <Property Name="DocumentoTipoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Endereco">
+    <Key>
+      <PropertyRef Name="EnderecoId" />
+    </Key>
+    <Property Name="EnderecoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rua" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Numero" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Bairro" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Complemento" Type="varchar" MaxLength="150" />
+    <Property Name="CidadeId" Type="int" Nullable="false" />
+    <Property Name="CEP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PessoaId" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="EstadoId" />
+    </Key>
+    <Property Name="EstadoId" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PaisId" Type="int" Nullable="false" />
+    <Property Name="Sigla" Type="char" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Falta">
+    <Key>
+      <PropertyRef Name="faltaId" />
+    </Key>
+    <Property Name="faltaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AulaId" Type="int" Nullable="false" />
+    <Property Name="PessoaId" Type="int" Nullable="false" />
+    <Property Name="Falta" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grau">
+    <Key>
+      <PropertyRef Name="GrauId" />
+    </Key>
+    <Property Name="GrauId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NotaAluno">
+    <Key>
+      <PropertyRef Name="PessoaId" />
+      <PropertyRef Name="AvaliacaoId" />
+    </Key>
+    <Property Name="PessoaId" Type="int" Nullable="false" />
+    <Property Name="AvaliacaoId" Type="int" Nullable="false" />
+    <Property Name="Nota" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="Observacao" Type="text" />
+  </EntityType>
+  <EntityType Name="Pais">
+    <Key>
+      <PropertyRef Name="PaisId" />
+    </Key>
+    <Property Name="PaisId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pessoa">
+    <Key>
+      <PropertyRef Name="PessoaId" />
+    </Key>
+    <Property Name="PessoaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DataNasc" Type="date" Nullable="false" />
+    <Property Name="Sexo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telefone1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telefone2" Type="varchar" MaxLength="50" />
+    <Property Name="AcessoId" Type="int" Nullable="false" />
+    <Property Name="PessoaAcessoId" Type="int" />
+    <Property Name="DataCadastro" Type="date" Nullable="false" />
+    <Property Name="Senha" Type="varchar" MaxLength="256" />
+    <Property Name="SatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="PessoaDisciplina">
+    <Key>
+      <PropertyRef Name="DisciplinaId" />
+      <PropertyRef Name="PessoaId" />
+    </Key>
+    <Property Name="DisciplinaId" Type="int" Nullable="false" />
+    <Property Name="PessoaId" Type="int" Nullable="false" />
+    <Property Name="Ano" Type="int" Nullable="false" />
+    <Property Name="Semestre" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="DataCadastro" Type="date" Nullable="false" />
+    <Property Name="DataConclusao" Type="date" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TipoStatusId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AlunoDisciplina_Disciplina1">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="1" />
+    <End Role="PessoaDisciplina" Type="Self.PessoaDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="DisciplinaId" />
+      </Principal>
+      <Dependent Role="PessoaDisciplina">
+        <PropertyRef Name="DisciplinaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AlunoDisciplina_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="PessoaDisciplina" Type="Self.PessoaDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="PessoaDisciplina">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aula_Disciplina1">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="1" />
+    <End Role="Aula" Type="Self.Aula" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="DisciplinaId" />
+      </Principal>
+      <Dependent Role="Aula">
+        <PropertyRef Name="DisciplinaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aula_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Aula" Type="Self.Aula" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Aula">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Avaliacao_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Avaliacao">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Avaliacao_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Avaliacao">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cidade_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="EstadoId" />
+      </Principal>
+      <Dependent Role="Cidade">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Curso_Grau1">
+    <End Role="Grau" Type="Self.Grau" Multiplicity="1" />
+    <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grau">
+        <PropertyRef Name="GrauId" />
+      </Principal>
+      <Dependent Role="Curso">
+        <PropertyRef Name="GrauId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Curso_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Curso">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Curso_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Curso">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Disciplina_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Disciplina">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Disciplina_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Disciplina">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DisciplinaCurso_Curso">
+    <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
+    <End Role="DisciplinaCurso" Type="Self.DisciplinaCurso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curso">
+        <PropertyRef Name="CursoId" />
+      </Principal>
+      <Dependent Role="DisciplinaCurso">
+        <PropertyRef Name="CursoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DisciplinaCurso_Disciplina">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="1" />
+    <End Role="DisciplinaCurso" Type="Self.DisciplinaCurso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="DisciplinaId" />
+      </Principal>
+      <Dependent Role="DisciplinaCurso">
+        <PropertyRef Name="DisciplinaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documento_DocumentoTipo">
+    <End Role="DocumentoTipo" Type="Self.DocumentoTipo" Multiplicity="1" />
+    <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentoTipo">
+        <PropertyRef Name="DocumentoTipoId" />
+      </Principal>
+      <Dependent Role="Documento">
+        <PropertyRef Name="DocumentoTipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documento_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Documento">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documento_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Documento">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Endereco_Cidade">
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+    <End Role="Endereco" Type="Self.Endereco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="CidadeId" />
+      </Principal>
+      <Dependent Role="Endereco">
+        <PropertyRef Name="CidadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Endereco_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Endereco" Type="Self.Endereco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Endereco">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Endereco_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Endereco" Type="Self.Endereco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Endereco">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estado_Pais">
+    <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
+    <End Role="Estado" Type="Self.Estado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="PaisId" />
+      </Principal>
+      <Dependent Role="Estado">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Falta_Aula">
+    <End Role="Aula" Type="Self.Aula" Multiplicity="1" />
+    <End Role="Falta" Type="Self.Falta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aula">
+        <PropertyRef Name="AulaId" />
+      </Principal>
+      <Dependent Role="Falta">
+        <PropertyRef Name="AulaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Falta_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Falta" Type="Self.Falta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Falta">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotaAluno_Avaliacao">
+    <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="1" />
+    <End Role="NotaAluno" Type="Self.NotaAluno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avaliacao">
+        <PropertyRef Name="AvaliacaoId" />
+      </Principal>
+      <Dependent Role="NotaAluno">
+        <PropertyRef Name="AvaliacaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotaAluno_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="NotaAluno" Type="Self.NotaAluno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="NotaAluno">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pessoa_Acesso">
+    <End Role="Acesso" Type="Self.Acesso" Multiplicity="1" />
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acesso">
+        <PropertyRef Name="AcessoId" />
+      </Principal>
+      <Dependent Role="Pessoa">
+        <PropertyRef Name="AcessoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pessoa_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="0..1" />
+    <End Role="Pessoa1" Type="Self.Pessoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Pessoa1">
+        <PropertyRef Name="PessoaAcessoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pessoa_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Pessoa">
+        <PropertyRef Name="SatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaDisciplina_Pessoa">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="PessoaDisciplina" Type="Self.PessoaDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="PessoaDisciplina">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_A469CC_MiniSigaModelStoreContainer">
+    <EntitySet Name="Acesso" EntityType="Self.Acesso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Aula" EntityType="Self.Aula" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Avaliacao" EntityType="Self.Avaliacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cidade" EntityType="Self.Cidade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Curso" EntityType="Self.Curso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Disciplina" EntityType="Self.Disciplina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DisciplinaCurso" EntityType="Self.DisciplinaCurso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentoTipo" EntityType="Self.DocumentoTipo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Endereco" EntityType="Self.Endereco" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Falta" EntityType="Self.Falta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grau" EntityType="Self.Grau" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NotaAluno" EntityType="Self.NotaAluno" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pais" EntityType="Self.Pais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pessoa" EntityType="Self.Pessoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PessoaDisciplina" EntityType="Self.PessoaDisciplina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AlunoDisciplina_Disciplina1" Association="Self.FK_AlunoDisciplina_Disciplina1">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="PessoaDisciplina" EntitySet="PessoaDisciplina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AlunoDisciplina_Status" Association="Self.FK_AlunoDisciplina_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="PessoaDisciplina" EntitySet="PessoaDisciplina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aula_Disciplina1" Association="Self.FK_Aula_Disciplina1">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="Aula" EntitySet="Aula" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aula_Pessoa" Association="Self.FK_Aula_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Aula" EntitySet="Aula" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Avaliacao_Pessoa" Association="Self.FK_Avaliacao_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Avaliacao" EntitySet="Avaliacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Avaliacao_Status" Association="Self.FK_Avaliacao_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Avaliacao" EntitySet="Avaliacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cidade_Estado" Association="Self.FK_Cidade_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Cidade" EntitySet="Cidade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Curso_Grau1" Association="Self.FK_Curso_Grau1">
+      <End Role="Grau" EntitySet="Grau" />
+      <End Role="Curso" EntitySet="Curso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Curso_Pessoa" Association="Self.FK_Curso_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Curso" EntitySet="Curso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Curso_Status" Association="Self.FK_Curso_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Curso" EntitySet="Curso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Disciplina_Pessoa" Association="Self.FK_Disciplina_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Disciplina" EntitySet="Disciplina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Disciplina_Status" Association="Self.FK_Disciplina_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Disciplina" EntitySet="Disciplina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DisciplinaCurso_Curso" Association="Self.FK_DisciplinaCurso_Curso">
+      <End Role="Curso" EntitySet="Curso" />
+      <End Role="DisciplinaCurso" EntitySet="DisciplinaCurso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DisciplinaCurso_Disciplina" Association="Self.FK_DisciplinaCurso_Disciplina">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="DisciplinaCurso" EntitySet="DisciplinaCurso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documento_DocumentoTipo" Association="Self.FK_Documento_DocumentoTipo">
+      <End Role="DocumentoTipo" EntitySet="DocumentoTipo" />
+      <End Role="Documento" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documento_Pessoa" Association="Self.FK_Documento_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Documento" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documento_Status" Association="Self.FK_Documento_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Documento" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Endereco_Cidade" Association="Self.FK_Endereco_Cidade">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="Endereco" EntitySet="Endereco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Endereco_Pessoa" Association="Self.FK_Endereco_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Endereco" EntitySet="Endereco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Endereco_Status" Association="Self.FK_Endereco_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Endereco" EntitySet="Endereco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estado_Pais" Association="Self.FK_Estado_Pais">
+      <End Role="Pais" EntitySet="Pais" />
+      <End Role="Estado" EntitySet="Estado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Falta_Aula" Association="Self.FK_Falta_Aula">
+      <End Role="Aula" EntitySet="Aula" />
+      <End Role="Falta" EntitySet="Falta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Falta_Pessoa" Association="Self.FK_Falta_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Falta" EntitySet="Falta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaAluno_Avaliacao" Association="Self.FK_NotaAluno_Avaliacao">
+      <End Role="Avaliacao" EntitySet="Avaliacao" />
+      <End Role="NotaAluno" EntitySet="NotaAluno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaAluno_Pessoa" Association="Self.FK_NotaAluno_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="NotaAluno" EntitySet="NotaAluno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pessoa_Acesso" Association="Self.FK_Pessoa_Acesso">
+      <End Role="Acesso" EntitySet="Acesso" />
+      <End Role="Pessoa" EntitySet="Pessoa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pessoa_Pessoa" Association="Self.FK_Pessoa_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Pessoa1" EntitySet="Pessoa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pessoa_Status" Association="Self.FK_Pessoa_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Pessoa" EntitySet="Pessoa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaDisciplina_Pessoa" Association="Self.FK_PessoaDisciplina_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="PessoaDisciplina" EntitySet="PessoaDisciplina" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,729 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A469CC_MiniSigaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MiniSigaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Acesso" EntityType="DB_A469CC_MiniSigaModel.Acesso" />
+    <EntitySet Name="Aula" EntityType="DB_A469CC_MiniSigaModel.Aula" />
+    <EntitySet Name="Avaliacao" EntityType="DB_A469CC_MiniSigaModel.Avaliacao" />
+    <EntitySet Name="Cidade" EntityType="DB_A469CC_MiniSigaModel.Cidade" />
+    <EntitySet Name="Curso" EntityType="DB_A469CC_MiniSigaModel.Curso" />
+    <EntitySet Name="Disciplina" EntityType="DB_A469CC_MiniSigaModel.Disciplina" />
+    <EntitySet Name="DisciplinaCurso" EntityType="DB_A469CC_MiniSigaModel.DisciplinaCurso" />
+    <EntitySet Name="Documento" EntityType="DB_A469CC_MiniSigaModel.Documento" />
+    <EntitySet Name="DocumentoTipo" EntityType="DB_A469CC_MiniSigaModel.DocumentoTipo" />
+    <EntitySet Name="Endereco" EntityType="DB_A469CC_MiniSigaModel.Endereco" />
+    <EntitySet Name="Estado" EntityType="DB_A469CC_MiniSigaModel.Estado" />
+    <EntitySet Name="Falta" EntityType="DB_A469CC_MiniSigaModel.Falta" />
+    <EntitySet Name="Grau" EntityType="DB_A469CC_MiniSigaModel.Grau" />
+    <EntitySet Name="NotaAluno" EntityType="DB_A469CC_MiniSigaModel.NotaAluno" />
+    <EntitySet Name="Pais" EntityType="DB_A469CC_MiniSigaModel.Pais" />
+    <EntitySet Name="Pessoa" EntityType="DB_A469CC_MiniSigaModel.Pessoa" />
+    <EntitySet Name="PessoaDisciplina" EntityType="DB_A469CC_MiniSigaModel.PessoaDisciplina" />
+    <EntitySet Name="Status" EntityType="DB_A469CC_MiniSigaModel.Status" />
+    <AssociationSet Name="FK_Pessoa_Acesso" Association="DB_A469CC_MiniSigaModel.FK_Pessoa_Acesso">
+      <End Role="Acesso" EntitySet="Acesso" />
+      <End Role="Pessoa" EntitySet="Pessoa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aula_Disciplina1" Association="DB_A469CC_MiniSigaModel.FK_Aula_Disciplina1">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="Aula" EntitySet="Aula" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aula_Pessoa" Association="DB_A469CC_MiniSigaModel.FK_Aula_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Aula" EntitySet="Aula" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Falta_Aula" Association="DB_A469CC_MiniSigaModel.FK_Falta_Aula">
+      <End Role="Aula" EntitySet="Aula" />
+      <End Role="Falta" EntitySet="Falta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Avaliacao_Pessoa" Association="DB_A469CC_MiniSigaModel.FK_Avaliacao_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Avaliacao" EntitySet="Avaliacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Avaliacao_Status" Association="DB_A469CC_MiniSigaModel.FK_Avaliacao_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Avaliacao" EntitySet="Avaliacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaAluno_Avaliacao" Association="DB_A469CC_MiniSigaModel.FK_NotaAluno_Avaliacao">
+      <End Role="Avaliacao" EntitySet="Avaliacao" />
+      <End Role="NotaAluno" EntitySet="NotaAluno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cidade_Estado" Association="DB_A469CC_MiniSigaModel.FK_Cidade_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Cidade" EntitySet="Cidade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Endereco_Cidade" Association="DB_A469CC_MiniSigaModel.FK_Endereco_Cidade">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="Endereco" EntitySet="Endereco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Curso_Grau1" Association="DB_A469CC_MiniSigaModel.FK_Curso_Grau1">
+      <End Role="Grau" EntitySet="Grau" />
+      <End Role="Curso" EntitySet="Curso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Curso_Pessoa" Association="DB_A469CC_MiniSigaModel.FK_Curso_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Curso" EntitySet="Curso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Curso_Status" Association="DB_A469CC_MiniSigaModel.FK_Curso_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Curso" EntitySet="Curso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DisciplinaCurso_Curso" Association="DB_A469CC_MiniSigaModel.FK_DisciplinaCurso_Curso">
+      <End Role="Curso" EntitySet="Curso" />
+      <End Role="DisciplinaCurso" EntitySet="DisciplinaCurso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AlunoDisciplina_Disciplina1" Association="DB_A469CC_MiniSigaModel.FK_AlunoDisciplina_Disciplina1">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="PessoaDisciplina" EntitySet="PessoaDisciplina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Disciplina_Pessoa" Association="DB_A469CC_MiniSigaModel.FK_Disciplina_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Disciplina" EntitySet="Disciplina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Disciplina_Status" Association="DB_A469CC_MiniSigaModel.FK_Disciplina_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Disciplina" EntitySet="Disciplina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DisciplinaCurso_Disciplina" Association="DB_A469CC_MiniSigaModel.FK_DisciplinaCurso_Disciplina">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="DisciplinaCurso" EntitySet="DisciplinaCurso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documento_DocumentoTipo" Association="DB_A469CC_MiniSigaModel.FK_Documento_DocumentoTipo">
+      <End Role="DocumentoTipo" EntitySet="DocumentoTipo" />
+      <End Role="Documento" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documento_Pessoa" Association="DB_A469CC_MiniSigaModel.FK_Documento_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Documento" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documento_Status" Association="DB_A469CC_MiniSigaModel.FK_Documento_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Documento" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Endereco_Pessoa" Association="DB_A469CC_MiniSigaModel.FK_Endereco_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Endereco" EntitySet="Endereco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Endereco_Status" Association="DB_A469CC_MiniSigaModel.FK_Endereco_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Endereco" EntitySet="Endereco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estado_Pais" Association="DB_A469CC_MiniSigaModel.FK_Estado_Pais">
+      <End Role="Pais" EntitySet="Pais" />
+      <End Role="Estado" EntitySet="Estado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Falta_Pessoa" Association="DB_A469CC_MiniSigaModel.FK_Falta_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Falta" EntitySet="Falta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaAluno_Pessoa" Association="DB_A469CC_MiniSigaModel.FK_NotaAluno_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="NotaAluno" EntitySet="NotaAluno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pessoa_Pessoa" Association="DB_A469CC_MiniSigaModel.FK_Pessoa_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Pessoa1" EntitySet="Pessoa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pessoa_Status" Association="DB_A469CC_MiniSigaModel.FK_Pessoa_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Pessoa" EntitySet="Pessoa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaDisciplina_Pessoa" Association="DB_A469CC_MiniSigaModel.FK_PessoaDisciplina_Pessoa">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="PessoaDisciplina" EntitySet="PessoaDisciplina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AlunoDisciplina_Status" Association="DB_A469CC_MiniSigaModel.FK_AlunoDisciplina_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="PessoaDisciplina" EntitySet="PessoaDisciplina" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Acesso">
+    <Key>
+      <PropertyRef Name="AcessoId" />
+    </Key>
+    <Property Name="AcessoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Pessoa" Relationship="DB_A469CC_MiniSigaModel.FK_Pessoa_Acesso" FromRole="Acesso" ToRole="Pessoa" />
+  </EntityType>
+  <EntityType Name="Aula">
+    <Key>
+      <PropertyRef Name="AulaId" />
+    </Key>
+    <Property Name="AulaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaId" Type="Int32" Nullable="false" />
+    <Property Name="Data" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Conteudo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DisciplinaId" Type="Int32" Nullable="false" />
+    <Property Name="Observacao" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Disciplina" Relationship="DB_A469CC_MiniSigaModel.FK_Aula_Disciplina1" FromRole="Aula" ToRole="Disciplina" />
+    <NavigationProperty Name="Pessoa" Relationship="DB_A469CC_MiniSigaModel.FK_Aula_Pessoa" FromRole="Aula" ToRole="Pessoa" />
+    <NavigationProperty Name="Falta" Relationship="DB_A469CC_MiniSigaModel.FK_Falta_Aula" FromRole="Aula" ToRole="Falta" />
+  </EntityType>
+  <EntityType Name="Avaliacao">
+    <Key>
+      <PropertyRef Name="AvaliacaoId" />
+    </Key>
+    <Property Name="AvaliacaoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaId" Type="Int32" Nullable="false" />
+    <Property Name="DataAvaliacaoId" Type="Int32" Nullable="false" />
+    <Property Name="Observacao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NotaMaxima" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="DB_A469CC_MiniSigaModel.FK_Avaliacao_Pessoa" FromRole="Avaliacao" ToRole="Pessoa" />
+    <NavigationProperty Name="Status" Relationship="DB_A469CC_MiniSigaModel.FK_Avaliacao_Status" FromRole="Avaliacao" ToRole="Status" />
+    <NavigationProperty Name="NotaAluno" Relationship="DB_A469CC_MiniSigaModel.FK_NotaAluno_Avaliacao" FromRole="Avaliacao" ToRole="NotaAluno" />
+  </EntityType>
+  <EntityType Name="Cidade">
+    <Key>
+      <PropertyRef Name="CidadeId" />
+    </Key>
+    <Property Name="CidadeId" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EstadoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Estado" Relationship="DB_A469CC_MiniSigaModel.FK_Cidade_Estado" FromRole="Cidade" ToRole="Estado" />
+    <NavigationProperty Name="Endereco" Relationship="DB_A469CC_MiniSigaModel.FK_Endereco_Cidade" FromRole="Cidade" ToRole="Endereco" />
+  </EntityType>
+  <EntityType Name="Curso">
+    <Key>
+      <PropertyRef Name="CursoId" />
+    </Key>
+    <Property Name="CursoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GrauId" Type="Int32" Nullable="false" />
+    <Property Name="Duracao" Type="Int32" Nullable="false" />
+    <Property Name="PessoaId" Type="Int32" Nullable="false" />
+    <Property Name="StatusId" Type="Int32" />
+    <NavigationProperty Name="Grau" Relationship="DB_A469CC_MiniSigaModel.FK_Curso_Grau1" FromRole="Curso" ToRole="Grau" />
+    <NavigationProperty Name="Pessoa" Relationship="DB_A469CC_MiniSigaModel.FK_Curso_Pessoa" FromRole="Curso" ToRole="Pessoa" />
+    <NavigationProperty Name="Status" Relationship="DB_A469CC_MiniSigaModel.FK_Curso_Status" FromRole="Curso" ToRole="Status" />
+    <NavigationProperty Name="DisciplinaCurso" Relationship="DB_A469CC_MiniSigaModel.FK_DisciplinaCurso_Curso" FromRole="Curso" ToRole="DisciplinaCurso" />
+  </EntityType>
+  <EntityType Name="Disciplina">
+    <Key>
+      <PropertyRef Name="DisciplinaId" />
+    </Key>
+    <Property Name="DisciplinaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PessoaId" Type="Int32" Nullable="false" />
+    <Property Name="StatusId" Type="Int32" />
+    <NavigationProperty Name="Aula" Relationship="DB_A469CC_MiniSigaModel.FK_Aula_Disciplina1" FromRole="Disciplina" ToRole="Aula" />
+    <NavigationProperty Name="PessoaDisciplina" Relationship="DB_A469CC_MiniSigaModel.FK_AlunoDisciplina_Disciplina1" FromRole="Disciplina" ToRole="PessoaDisciplina" />
+    <NavigationProperty Name="Pessoa" Relationship="DB_A469CC_MiniSigaModel.FK_Disciplina_Pessoa" FromRole="Disciplina" ToRole="Pessoa" />
+    <NavigationProperty Name="Status" Relationship="DB_A469CC_MiniSigaModel.FK_Disciplina_Status" FromRole="Disciplina" ToRole="Status" />
+    <NavigationProperty Name="DisciplinaCurso" Relationship="DB_A469CC_MiniSigaModel.FK_DisciplinaCurso_Disciplina" FromRole="Disciplina" ToRole="DisciplinaCurso" />
+  </EntityType>
+  <EntityType Name="DisciplinaCurso">
+    <Key>
+      <PropertyRef Name="DisciplinaId" />
+      <PropertyRef Name="CursoId" />
+    </Key>
+    <Property Name="DisciplinaId" Type="Int32" Nullable="false" />
+    <Property Name="CursoId" Type="Int32" Nullable="false" />
+    <Property Name="Data" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="Periodo" Type="Int32" />
+    <Property Name="Valor" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="Turno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Curso" Relationship="DB_A469CC_MiniSigaModel.FK_DisciplinaCurso_Curso" FromRole="DisciplinaCurso" ToRole="Curso" />
+    <NavigationProperty Name="Disciplina" Relationship="DB_A469CC_MiniSigaModel.FK_DisciplinaCurso_Disciplina" FromRole="DisciplinaCurso" ToRole="Disciplina" />
+  </EntityType>
+  <EntityType Name="Documento">
+    <Key>
+      <PropertyRef Name="DocumentoId" />
+    </Key>
+    <Property Name="DocumentoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaId" Type="Int32" Nullable="false" />
+    <Property Name="DocumentoTipoId" Type="Int32" Nullable="false" />
+    <Property Name="Numero" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OrgaoExpedidor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DataExpedicao" Type="DateTime" Precision="0" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DocumentoTipo" Relationship="DB_A469CC_MiniSigaModel.FK_Documento_DocumentoTipo" FromRole="Documento" ToRole="DocumentoTipo" />
+    <NavigationProperty Name="Pessoa" Relationship="DB_A469CC_MiniSigaModel.FK_Documento_Pessoa" FromRole="Documento" ToRole="Pessoa" />
+    <NavigationProperty Name="Status" Relationship="DB_A469CC_MiniSigaModel.FK_Documento_Status" FromRole="Documento" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="DocumentoTipo">
+    <Key>
+      <PropertyRef Name="DocumentoTipoId" />
+    </Key>
+    <Property Name="DocumentoTipoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Documento" Relationship="DB_A469CC_MiniSigaModel.FK_Documento_DocumentoTipo" FromRole="DocumentoTipo" ToRole="Documento" />
+  </EntityType>
+  <EntityType Name="Endereco">
+    <Key>
+      <PropertyRef Name="EnderecoId" />
+    </Key>
+    <Property Name="EnderecoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rua" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Numero" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bairro" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Complemento" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CidadeId" Type="Int32" Nullable="false" />
+    <Property Name="CEP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PessoaId" Type="Int32" Nullable="false" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cidade" Relationship="DB_A469CC_MiniSigaModel.FK_Endereco_Cidade" FromRole="Endereco" ToRole="Cidade" />
+    <NavigationProperty Name="Pessoa" Relationship="DB_A469CC_MiniSigaModel.FK_Endereco_Pessoa" FromRole="Endereco" ToRole="Pessoa" />
+    <NavigationProperty Name="Status" Relationship="DB_A469CC_MiniSigaModel.FK_Endereco_Status" FromRole="Endereco" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="EstadoId" />
+    </Key>
+    <Property Name="EstadoId" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PaisId" Type="Int32" Nullable="false" />
+    <Property Name="Sigla" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Cidade" Relationship="DB_A469CC_MiniSigaModel.FK_Cidade_Estado" FromRole="Estado" ToRole="Cidade" />
+    <NavigationProperty Name="Pais" Relationship="DB_A469CC_MiniSigaModel.FK_Estado_Pais" FromRole="Estado" ToRole="Pais" />
+  </EntityType>
+  <EntityType Name="Falta">
+    <Key>
+      <PropertyRef Name="faltaId" />
+    </Key>
+    <Property Name="faltaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AulaId" Type="Int32" Nullable="false" />
+    <Property Name="PessoaId" Type="Int32" Nullable="false" />
+    <Property Name="Falta1" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Aula" Relationship="DB_A469CC_MiniSigaModel.FK_Falta_Aula" FromRole="Falta" ToRole="Aula" />
+    <NavigationProperty Name="Pessoa" Relationship="DB_A469CC_MiniSigaModel.FK_Falta_Pessoa" FromRole="Falta" ToRole="Pessoa" />
+  </EntityType>
+  <EntityType Name="Grau">
+    <Key>
+      <PropertyRef Name="GrauId" />
+    </Key>
+    <Property Name="GrauId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Curso" Relationship="DB_A469CC_MiniSigaModel.FK_Curso_Grau1" FromRole="Grau" ToRole="Curso" />
+  </EntityType>
+  <EntityType Name="NotaAluno">
+    <Key>
+      <PropertyRef Name="PessoaId" />
+      <PropertyRef Name="AvaliacaoId" />
+    </Key>
+    <Property Name="PessoaId" Type="Int32" Nullable="false" />
+    <Property Name="AvaliacaoId" Type="Int32" Nullable="false" />
+    <Property Name="Nota" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="Observacao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Avaliacao" Relationship="DB_A469CC_MiniSigaModel.FK_NotaAluno_Avaliacao" FromRole="NotaAluno" ToRole="Avaliacao" />
+    <NavigationProperty Name="Pessoa" Relationship="DB_A469CC_MiniSigaModel.FK_NotaAluno_Pessoa" FromRole="NotaAluno" ToRole="Pessoa" />
+  </EntityType>
+  <EntityType Name="Pais">
+    <Key>
+      <PropertyRef Name="PaisId" />
+    </Key>
+    <Property Name="PaisId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Estado" Relationship="DB_A469CC_MiniSigaModel.FK_Estado_Pais" FromRole="Pais" ToRole="Estado" />
+  </EntityType>
+  <EntityType Name="Pessoa">
+    <Key>
+      <PropertyRef Name="PessoaId" />
+    </Key>
+    <Property Name="PessoaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DataNasc" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Sexo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefone1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AcessoId" Type="Int32" Nullable="false" />
+    <Property Name="PessoaAcessoId" Type="Int32" />
+    <Property Name="DataCadastro" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Senha" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="SatusId" Type="Int32" />
+    <NavigationProperty Name="Acesso" Relationship="DB_A469CC_MiniSigaModel.FK_Pessoa_Acesso" FromRole="Pessoa" ToRole="Acesso" />
+    <NavigationProperty Name="Aula" Relationship="DB_A469CC_MiniSigaModel.FK_Aula_Pessoa" FromRole="Pessoa" ToRole="Aula" />
+    <NavigationProperty Name="Avaliacao" Relationship="DB_A469CC_MiniSigaModel.FK_Avaliacao_Pessoa" FromRole="Pessoa" ToRole="Avaliacao" />
+    <NavigationProperty Name="Curso" Relationship="DB_A469CC_MiniSigaModel.FK_Curso_Pessoa" FromRole="Pessoa" ToRole="Curso" />
+    <NavigationProperty Name="Disciplina" Relationship="DB_A469CC_MiniSigaModel.FK_Disciplina_Pessoa" FromRole="Pessoa" ToRole="Disciplina" />
+    <NavigationProperty Name="Documento" Relationship="DB_A469CC_MiniSigaModel.FK_Documento_Pessoa" FromRole="Pessoa" ToRole="Documento" />
+    <NavigationProperty Name="Endereco" Relationship="DB_A469CC_MiniSigaModel.FK_Endereco_Pessoa" FromRole="Pessoa" ToRole="Endereco" />
+    <NavigationProperty Name="Falta" Relationship="DB_A469CC_MiniSigaModel.FK_Falta_Pessoa" FromRole="Pessoa" ToRole="Falta" />
+    <NavigationProperty Name="NotaAluno" Relationship="DB_A469CC_MiniSigaModel.FK_NotaAluno_Pessoa" FromRole="Pessoa" ToRole="NotaAluno" />
+    <NavigationProperty Name="Pessoa1" Relationship="DB_A469CC_MiniSigaModel.FK_Pessoa_Pessoa" FromRole="Pessoa" ToRole="Pessoa1" />
+    <NavigationProperty Name="Pessoa2" Relationship="DB_A469CC_MiniSigaModel.FK_Pessoa_Pessoa" FromRole="Pessoa1" ToRole="Pessoa" />
+    <NavigationProperty Name="Status" Relationship="DB_A469CC_MiniSigaModel.FK_Pessoa_Status" FromRole="Pessoa" ToRole="Status" />
+    <NavigationProperty Name="PessoaDisciplina" Relationship="DB_A469CC_MiniSigaModel.FK_PessoaDisciplina_Pessoa" FromRole="Pessoa" ToRole="PessoaDisciplina" />
+  </EntityType>
+  <EntityType Name="PessoaDisciplina">
+    <Key>
+      <PropertyRef Name="DisciplinaId" />
+      <PropertyRef Name="PessoaId" />
+    </Key>
+    <Property Name="DisciplinaId" Type="Int32" Nullable="false" />
+    <Property Name="PessoaId" Type="Int32" Nullable="false" />
+    <Property Name="Ano" Type="Int32" Nullable="false" />
+    <Property Name="Semestre" Type="Int32" Nullable="false" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="DataCadastro" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DataConclusao" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Disciplina" Relationship="DB_A469CC_MiniSigaModel.FK_AlunoDisciplina_Disciplina1" FromRole="PessoaDisciplina" ToRole="Disciplina" />
+    <NavigationProperty Name="Pessoa" Relationship="DB_A469CC_MiniSigaModel.FK_PessoaDisciplina_Pessoa" FromRole="PessoaDisciplina" ToRole="Pessoa" />
+    <NavigationProperty Name="Status" Relationship="DB_A469CC_MiniSigaModel.FK_AlunoDisciplina_Status" FromRole="PessoaDisciplina" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TipoStatusId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Avaliacao" Relationship="DB_A469CC_MiniSigaModel.FK_Avaliacao_Status" FromRole="Status" ToRole="Avaliacao" />
+    <NavigationProperty Name="Curso" Relationship="DB_A469CC_MiniSigaModel.FK_Curso_Status" FromRole="Status" ToRole="Curso" />
+    <NavigationProperty Name="Disciplina" Relationship="DB_A469CC_MiniSigaModel.FK_Disciplina_Status" FromRole="Status" ToRole="Disciplina" />
+    <NavigationProperty Name="Documento" Relationship="DB_A469CC_MiniSigaModel.FK_Documento_Status" FromRole="Status" ToRole="Documento" />
+    <NavigationProperty Name="Endereco" Relationship="DB_A469CC_MiniSigaModel.FK_Endereco_Status" FromRole="Status" ToRole="Endereco" />
+    <NavigationProperty Name="Pessoa" Relationship="DB_A469CC_MiniSigaModel.FK_Pessoa_Status" FromRole="Status" ToRole="Pessoa" />
+    <NavigationProperty Name="PessoaDisciplina" Relationship="DB_A469CC_MiniSigaModel.FK_AlunoDisciplina_Status" FromRole="Status" ToRole="PessoaDisciplina" />
+  </EntityType>
+  <Association Name="FK_Pessoa_Acesso">
+    <End Type="DB_A469CC_MiniSigaModel.Acesso" Role="Acesso" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acesso">
+        <PropertyRef Name="AcessoId" />
+      </Principal>
+      <Dependent Role="Pessoa">
+        <PropertyRef Name="AcessoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aula_Disciplina1">
+    <End Type="DB_A469CC_MiniSigaModel.Disciplina" Role="Disciplina" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Aula" Role="Aula" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="DisciplinaId" />
+      </Principal>
+      <Dependent Role="Aula">
+        <PropertyRef Name="DisciplinaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aula_Pessoa">
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Aula" Role="Aula" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Aula">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Falta_Aula">
+    <End Type="DB_A469CC_MiniSigaModel.Aula" Role="Aula" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Falta" Role="Falta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aula">
+        <PropertyRef Name="AulaId" />
+      </Principal>
+      <Dependent Role="Falta">
+        <PropertyRef Name="AulaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Avaliacao_Pessoa">
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Avaliacao" Role="Avaliacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Avaliacao">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Avaliacao_Status">
+    <End Type="DB_A469CC_MiniSigaModel.Status" Role="Status" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Avaliacao" Role="Avaliacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Avaliacao">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotaAluno_Avaliacao">
+    <End Type="DB_A469CC_MiniSigaModel.Avaliacao" Role="Avaliacao" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.NotaAluno" Role="NotaAluno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avaliacao">
+        <PropertyRef Name="AvaliacaoId" />
+      </Principal>
+      <Dependent Role="NotaAluno">
+        <PropertyRef Name="AvaliacaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cidade_Estado">
+    <End Type="DB_A469CC_MiniSigaModel.Estado" Role="Estado" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Cidade" Role="Cidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="EstadoId" />
+      </Principal>
+      <Dependent Role="Cidade">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Endereco_Cidade">
+    <End Type="DB_A469CC_MiniSigaModel.Cidade" Role="Cidade" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Endereco" Role="Endereco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="CidadeId" />
+      </Principal>
+      <Dependent Role="Endereco">
+        <PropertyRef Name="CidadeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Curso_Grau1">
+    <End Type="DB_A469CC_MiniSigaModel.Grau" Role="Grau" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Curso" Role="Curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grau">
+        <PropertyRef Name="GrauId" />
+      </Principal>
+      <Dependent Role="Curso">
+        <PropertyRef Name="GrauId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Curso_Pessoa">
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Curso" Role="Curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Curso">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Curso_Status">
+    <End Type="DB_A469CC_MiniSigaModel.Status" Role="Status" Multiplicity="0..1" />
+    <End Type="DB_A469CC_MiniSigaModel.Curso" Role="Curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Curso">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DisciplinaCurso_Curso">
+    <End Type="DB_A469CC_MiniSigaModel.Curso" Role="Curso" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.DisciplinaCurso" Role="DisciplinaCurso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curso">
+        <PropertyRef Name="CursoId" />
+      </Principal>
+      <Dependent Role="DisciplinaCurso">
+        <PropertyRef Name="CursoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AlunoDisciplina_Disciplina1">
+    <End Type="DB_A469CC_MiniSigaModel.Disciplina" Role="Disciplina" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.PessoaDisciplina" Role="PessoaDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="DisciplinaId" />
+      </Principal>
+      <Dependent Role="PessoaDisciplina">
+        <PropertyRef Name="DisciplinaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Disciplina_Pessoa">
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Disciplina" Role="Disciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Disciplina">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Disciplina_Status">
+    <End Type="DB_A469CC_MiniSigaModel.Status" Role="Status" Multiplicity="0..1" />
+    <End Type="DB_A469CC_MiniSigaModel.Disciplina" Role="Disciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Disciplina">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DisciplinaCurso_Disciplina">
+    <End Type="DB_A469CC_MiniSigaModel.Disciplina" Role="Disciplina" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.DisciplinaCurso" Role="DisciplinaCurso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="DisciplinaId" />
+      </Principal>
+      <Dependent Role="DisciplinaCurso">
+        <PropertyRef Name="DisciplinaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documento_DocumentoTipo">
+    <End Type="DB_A469CC_MiniSigaModel.DocumentoTipo" Role="DocumentoTipo" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Documento" Role="Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentoTipo">
+        <PropertyRef Name="DocumentoTipoId" />
+      </Principal>
+      <Dependent Role="Documento">
+        <PropertyRef Name="DocumentoTipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documento_Pessoa">
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Documento" Role="Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Documento">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documento_Status">
+    <End Type="DB_A469CC_MiniSigaModel.Status" Role="Status" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Documento" Role="Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Documento">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Endereco_Pessoa">
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Endereco" Role="Endereco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Endereco">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Endereco_Status">
+    <End Type="DB_A469CC_MiniSigaModel.Status" Role="Status" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Endereco" Role="Endereco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Endereco">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estado_Pais">
+    <End Type="DB_A469CC_MiniSigaModel.Pais" Role="Pais" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Estado" Role="Estado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="PaisId" />
+      </Principal>
+      <Dependent Role="Estado">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Falta_Pessoa">
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.Falta" Role="Falta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Falta">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotaAluno_Pessoa">
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.NotaAluno" Role="NotaAluno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="NotaAluno">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pessoa_Pessoa">
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa" Multiplicity="0..1" />
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="Pessoa1">
+        <PropertyRef Name="PessoaAcessoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pessoa_Status">
+    <End Type="DB_A469CC_MiniSigaModel.Status" Role="Status" Multiplicity="0..1" />
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Pessoa">
+        <PropertyRef Name="SatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaDisciplina_Pessoa">
+    <End Type="DB_A469CC_MiniSigaModel.Pessoa" Role="Pessoa" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.PessoaDisciplina" Role="PessoaDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="PessoaDisciplina">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AlunoDisciplina_Status">
+    <End Type="DB_A469CC_MiniSigaModel.Status" Role="Status" Multiplicity="1" />
+    <End Type="DB_A469CC_MiniSigaModel.PessoaDisciplina" Role="PessoaDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="PessoaDisciplina">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
